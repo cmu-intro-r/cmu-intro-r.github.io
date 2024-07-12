@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Getting Started | An Introduction to R</title>
+  <meta name="description" content="1 Getting Started | An Introduction to R" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Getting Started | An Introduction to R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Getting Started | An Introduction to R" />
+  
+  
+  
+
+<meta name="author" content="Peter E. Freeman (Department of Statistics &amp; Data Science, Carnegie Mellon University)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="preface.html"/>
+<link rel="next" href="vectors-and-lists.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting Started</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="getting-started.html"><a href="getting-started.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.2" data-path="getting-started.html"><a href="getting-started.html#the-rstudio-layout"><i class="fa fa-check"></i><b>1.2</b> The RStudio Layout</a></li>
+<li class="chapter" data-level="1.3" data-path="getting-started.html"><a href="getting-started.html#what-is-r"><i class="fa fa-check"></i><b>1.3</b> What is R?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html"><i class="fa fa-check"></i><b>2</b> Vectors and Lists</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-vectors"><i class="fa fa-check"></i><b>2.1</b> All About Vectors</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-vectors-lab-exercises"><i class="fa fa-check"></i><b>2.1.1</b> All About Vectors: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-lists"><i class="fa fa-check"></i><b>2.2</b> All About Lists</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-lists-lab-exercises"><i class="fa fa-check"></i><b>2.2.1</b> All About Lists: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#handy-vector-functions"><i class="fa fa-check"></i><b>2.3</b> Handy Vector Functions</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#handy-vector-functions-lab-exercises"><i class="fa fa-check"></i><b>2.3.1</b> Handy Vector Functions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#control-flow-constructs"><i class="fa fa-check"></i><b>2.4</b> Control-Flow Constructs</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#control-flow-constructs-lab-exercises"><i class="fa fa-check"></i><b>2.4.1</b> Control-Flow Constructs: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#loops"><i class="fa fa-check"></i><b>2.5</b> Loops</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#loops-lab-exercises"><i class="fa fa-check"></i><b>2.5.1</b> Loops: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>3</b> Strings</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="strings.html"><a href="strings.html#basic-string-functions"><i class="fa fa-check"></i><b>3.1</b> Basic String Functions</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="strings.html"><a href="strings.html#basic-string-functions-lab-exercises"><i class="fa fa-check"></i><b>3.1.1</b> Basic String Functions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="strings.html"><a href="strings.html#regular-expressions"><i class="fa fa-check"></i><b>3.2</b> Regular Expressions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="strings.html"><a href="strings.html#regular-expressions-lab-exercises"><i class="fa fa-check"></i><b>3.2.1</b> Regular Expressions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="strings.html"><a href="strings.html#string-extraction-and-replacement"><i class="fa fa-check"></i><b>3.3</b> String Extraction and Replacement</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="strings.html"><a href="strings.html#string-extraction-and-replacement-lab-exercises"><i class="fa fa-check"></i><b>3.3.1</b> String Extraction and Replacement: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html"><i class="fa fa-check"></i><b>4</b> Data Frames and Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-io"><i class="fa fa-check"></i><b>4.1</b> Data I/O</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-io-lab-exercises"><i class="fa fa-check"></i><b>4.1.1</b> Data I/O: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#splitapplycombine"><i class="fa fa-check"></i><b>4.2</b> Split/Apply/Combine</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#splitapplycombine-lab-exercises"><i class="fa fa-check"></i><b>4.2.1</b> Split/Apply/Combine: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#pipes"><i class="fa fa-check"></i><b>4.3</b> Pipes</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#pipes-lab-exercises"><i class="fa fa-check"></i><b>4.3.1</b> Pipes: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-manipulation-with-dplyr"><i class="fa fa-check"></i><b>4.4</b> Data Manipulation with dplyr</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-manipulation-with-dplyr-lab-exercises"><i class="fa fa-check"></i><b>4.4.1</b> Data Manipulation with dplyr: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="getting-started" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Getting Started<a href="getting-started.html#getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="installing-r-and-rstudio" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Installing R and RStudio<a href="getting-started.html#installing-r-and-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>These instructions are current as of April 2024.</em></p>
+<p>To download <code>R</code> and <code>RStudio</code>, first go to
+<a href="https://posit.co/download/rstudio-desktop/">this web site</a>.</p>
+<ul>
+<li>To the left is a button that says “Download and Install R”. Click on that, then go to the top box and select the appropriate download link (for macOS or Windows). If Windows, then click on “base” and then on “Download R-4.3.3 for Windows”. (Download and follow the instructions to install <code>R</code>.) If Mac, click on the appropriate package name, depending on whether you have an Apple Silicon- or Intel-based Mac. (Download and follow the instructions.)</li>
+<li>To the right is a button that says “Download RStudio Desktop…” Assuming your <code>R</code> installation was successful, click on this to download and install <code>RStudio</code>. (As before, follow the instructions…installation should be seamless.)</li>
+</ul>
+</div>
+<div id="the-rstudio-layout" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> The RStudio Layout<a href="getting-started.html#the-rstudio-layout" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When you first open <code>RStudio</code>, it should look something like this:</p>
+<p><img src="figures/RStudio.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>At first, the most important elements of <code>RStudio</code> to be aware of are</p>
+<ul>
+<li>the <code>Console</code> pane (shown at left here); and</li>
+<li>the <code>Files</code>, <code>Packages</code>, and <code>Help</code> panes (shown at lower right)</li>
+</ul>
+<p>The <code>Console</code> pane is where you will type commands (starting in the next
+section, <em>What is R?</em>)</p>
+<p>The <code>Files</code> pane shows where you are within your computer’s file system. You can click directly on the folders within this pane to move downwards within your file system, or, if you need to go to a folder not directly under <code>Home</code>, you can click on the three dots “…” (to the right of <code>Home</code>) and that will open your system’s folder navigator…click through to the folder you want, and select “Open” (or the equivalent).</p>
+<p><strong>It is imperative that you know where, e.g., the files you want to load into <code>RStudio</code> are located once you download them, and that you know how to move to the folder in which the files are located!</strong></p>
+<p>Once you are in the folder you want to work in, you should click on <code>More</code> (next to the gear icon) and click on <code>Set as Working Directory</code>.</p>
+<p>The <code>Packages</code> pane contains a button labeled <code>Install</code>: click on this button when and if you need to install a package that is not currently in your local installation of <code>R</code>.</p>
+<p>The <code>Help</code> pane contains a search field to upper right…type in a function name (e.g., <code>mean</code>) and the documentation will appear. Alternatively, you can type, e.g., <code>?mean</code> in the <code>Console</code> pane.</p>
+<p>All good? You are ready to get started with <code>R</code>!</p>
+</div>
+<div id="what-is-r" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> What is R?<a href="getting-started.html#what-is-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>NOTE:</strong> throughout this “book”, code output is not shown. It is assumed that you will type all the code into the <code>Console</code> in <code>RStudio</code>, both to actively engage with the material and to actually see the output.</p>
+<p>We start this class as any class of this type should be started. Assuming you’ve fired up <code>RStudio</code> and you’ve meandered your way to the console, go to the prompt and type the following:</p>
+<pre><code>print(&quot;Hello, World!&quot;)</code></pre>
+<p>So, to get to the first question you may have: why is there a “<code>[1]</code>” in the output? It denotes that on this line of output, the first displayed value is the first output value overall. Compare this to the output you get when you sample 50 values from a standard normal distribution:</p>
+<pre><code>rnorm(50)</code></pre>
+<p>From the <a href="https://cran.r-project.org/doc/FAQ/R-FAQ.html#What-is-R_003f">R FAQ</a>:</p>
+<p>“2.1 What is <code>R</code>?</p>
+<p><code>R</code> is a system for statistical computation and graphics. It consists of a language plus a run-time environment with graphics, a debugger, access to certain system functions, and the ability to run programs stored in script files.</p>
+<p>The design of <code>R</code> has been heavily influenced by two existing languages: Becker, Chambers &amp; Wilks’ <code>S</code> (see What is <code>S</code>?) and Sussman’s <code>Scheme</code>. Whereas the resulting language is very similar in appearance to <code>S</code>, the underlying implementation and semantics are derived from <code>Scheme</code>…</p>
+<p>The core of <code>R</code> is an interpreted computer language which allows branching and looping as well as modular programming using functions. Most of the user-visible functions in <code>R</code> are written in <code>R</code>. It is possible for the user to interface to procedures written in the <code>C</code>, <code>C++</code>, or <code>FORTRAN</code> languages for efficiency. The <code>R</code> distribution contains functionality for a large number of statistical procedures. Among these are: linear and generalized linear models, nonlinear regression models, time series analysis, classical parametric and nonparametric tests, clustering and smoothing. There is also a large set of functions which provide a flexible graphical environment for creating various kinds of data presentations…”</p>
+<p><code>R</code> has a <a href="https://www.r-project.org/">home page</a>. It is free software distributed under a <code>GNU</code>-style copyleft, and an official part of the <code>GNU</code> project (“<code>GNU S</code>”).</p>
+<hr />
+<p>A key phrase above is “[t]he core of <code>R</code> is an interpreted computer language.” This means that instructions are executed directly when typed into the console of <code>RStudio</code>. For instance:</p>
+<pre><code>666</code></pre>
+<p><code>R</code> doesn’t know necessarily what to do with this input of type “double,” so it outputs it to the screen. (If you input something of unknown type, like an uninitialized variable, you’d get an error instead.)</p>
+<p>You have to help <code>R</code> along, by, e.g., explicitly telling it you want to assign the value 666 to a variable:</p>
+<pre><code>x &lt;- 666
+x
+typeof(x)</code></pre>
+<p>There are other ways to output the value of the variable <code>x</code>, such as</p>
+<pre><code>print(x)
+cat(&quot;x =&quot;,x,&quot;\n&quot;)</code></pre>
+<p>As you can see (and will see again later), the latter is more flexible than the former.</p>
+<hr />
+<p>Standard mathematical operations include</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Operation</th>
+<th align="left">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">+</td>
+<td align="left">addition</td>
+</tr>
+<tr class="even">
+<td align="center">-</td>
+<td align="left">subtraction</td>
+</tr>
+<tr class="odd">
+<td align="center">*</td>
+<td align="left">multiplication</td>
+</tr>
+<tr class="even">
+<td align="center">/</td>
+<td align="left">division</td>
+</tr>
+<tr class="odd">
+<td align="center">^</td>
+<td align="left">exponentiation</td>
+</tr>
+<tr class="even">
+<td align="center">%%</td>
+<td align="left">modulus (i.e., remainder)</td>
+</tr>
+<tr class="odd">
+<td align="center">%/%</td>
+<td align="left">division with (floored) integer round-off</td>
+</tr>
+</tbody>
+</table>
+<p>Try the following:</p>
+<pre><code>x &lt;- 2
+y &lt;- 3
+x*y
+x/y
+x^y
+y%/%x</code></pre>
+<hr />
+<p>To remove the variable <code>x</code> from global environment:</p>
+<pre><code>x &lt;- 666
+rm(x)
+gc()</code></pre>
+<p>The latter function’s name stands for “garbage collection.” Garbage collection is a means by which to give freed memory back to your computer for it to use, and thus is only really important if you are removing variables that are using lots of memory (e.g., large matrices).</p>
+
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="preface.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vectors-and-lists.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

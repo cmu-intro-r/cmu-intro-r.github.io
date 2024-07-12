@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Strings | An Introduction to R</title>
+  <meta name="description" content="3 Strings | An Introduction to R" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Strings | An Introduction to R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Strings | An Introduction to R" />
+  
+  
+  
+
+<meta name="author" content="Peter E. Freeman (Department of Statistics &amp; Data Science, Carnegie Mellon University)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="vectors-and-lists.html"/>
+<link rel="next" href="data-frames-and-data-manipulation.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting Started</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="getting-started.html"><a href="getting-started.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.2" data-path="getting-started.html"><a href="getting-started.html#the-rstudio-layout"><i class="fa fa-check"></i><b>1.2</b> The RStudio Layout</a></li>
+<li class="chapter" data-level="1.3" data-path="getting-started.html"><a href="getting-started.html#what-is-r"><i class="fa fa-check"></i><b>1.3</b> What is R?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html"><i class="fa fa-check"></i><b>2</b> Vectors and Lists</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-vectors"><i class="fa fa-check"></i><b>2.1</b> All About Vectors</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-vectors-lab-exercises"><i class="fa fa-check"></i><b>2.1.1</b> All About Vectors: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-lists"><i class="fa fa-check"></i><b>2.2</b> All About Lists</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-lists-lab-exercises"><i class="fa fa-check"></i><b>2.2.1</b> All About Lists: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#handy-vector-functions"><i class="fa fa-check"></i><b>2.3</b> Handy Vector Functions</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#handy-vector-functions-lab-exercises"><i class="fa fa-check"></i><b>2.3.1</b> Handy Vector Functions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#control-flow-constructs"><i class="fa fa-check"></i><b>2.4</b> Control-Flow Constructs</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#control-flow-constructs-lab-exercises"><i class="fa fa-check"></i><b>2.4.1</b> Control-Flow Constructs: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#loops"><i class="fa fa-check"></i><b>2.5</b> Loops</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#loops-lab-exercises"><i class="fa fa-check"></i><b>2.5.1</b> Loops: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>3</b> Strings</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="strings.html"><a href="strings.html#basic-string-functions"><i class="fa fa-check"></i><b>3.1</b> Basic String Functions</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="strings.html"><a href="strings.html#basic-string-functions-lab-exercises"><i class="fa fa-check"></i><b>3.1.1</b> Basic String Functions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="strings.html"><a href="strings.html#regular-expressions"><i class="fa fa-check"></i><b>3.2</b> Regular Expressions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="strings.html"><a href="strings.html#regular-expressions-lab-exercises"><i class="fa fa-check"></i><b>3.2.1</b> Regular Expressions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="strings.html"><a href="strings.html#string-extraction-and-replacement"><i class="fa fa-check"></i><b>3.3</b> String Extraction and Replacement</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="strings.html"><a href="strings.html#string-extraction-and-replacement-lab-exercises"><i class="fa fa-check"></i><b>3.3.1</b> String Extraction and Replacement: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html"><i class="fa fa-check"></i><b>4</b> Data Frames and Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-io"><i class="fa fa-check"></i><b>4.1</b> Data I/O</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-io-lab-exercises"><i class="fa fa-check"></i><b>4.1.1</b> Data I/O: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#splitapplycombine"><i class="fa fa-check"></i><b>4.2</b> Split/Apply/Combine</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#splitapplycombine-lab-exercises"><i class="fa fa-check"></i><b>4.2.1</b> Split/Apply/Combine: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#pipes"><i class="fa fa-check"></i><b>4.3</b> Pipes</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#pipes-lab-exercises"><i class="fa fa-check"></i><b>4.3.1</b> Pipes: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-manipulation-with-dplyr"><i class="fa fa-check"></i><b>4.4</b> Data Manipulation with dplyr</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-manipulation-with-dplyr-lab-exercises"><i class="fa fa-check"></i><b>4.4.1</b> Data Manipulation with dplyr: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="strings" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Strings<a href="strings.html#strings" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="basic-string-functions" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Basic String Functions<a href="strings.html#basic-string-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A string is a sequence of characters that are bound together, where a character is a symbol is a written language.</p>
+<p>In <code>R</code>, a string is of mode (or class) character and is bounded by quotes (either single or double):</p>
+<pre><code>mode(&quot;r&quot;)
+class(&#39;r&#39;)</code></pre>
+<p>Two notes:</p>
+<ul>
+<li><code>R</code> helps keep your life complicated via two similar but not identical concepts: <code>mode</code> and <code>class</code>. Feel free to lose time trying to fully internalize how they differ.</li>
+<li>Double quotes are preferable, because then one can use single quotes as apostrophes in strings.</li>
+</ul>
+<hr />
+<p>There are special symbols that one uses for tabbing (“) and for forcing line breaks (”“):</p>
+<pre><code>message &lt;- &quot;To-do list for students:\n\tHomework\n\tLabs\n\tFinal Project&quot;
+cat(message)</code></pre>
+<hr />
+<p>To count the number of characters in a string, use the function <code>nchar()</code> (as opposed to <code>length()</code>, which counts the number of elements in a vector).</p>
+<p>To illustrate the difference, let’s define a vector of strings:</p>
+<pre><code>str.vec &lt;- c(&quot;I&quot;,&quot;will&quot;,&quot;master&quot;,&quot;R&quot;)
+nchar(str.vec)
+length(str.vec)</code></pre>
+<p>Potentially useful functions to use with vectors that we have not seen previously include:</p>
+<pre><code>head(str.vec,2)       # display/extract the first two elements
+tail(str.vec,2)       #                 the last two elements
+toupper(str.vec)      # change all characters to upper case
+tolower(str.vec)      # change all characters to lower case</code></pre>
+<hr />
+<p>Let’s define another string vector:</p>
+<pre><code>candidates &lt;- c(&quot;Trump&quot;,&quot;Clinton&quot;,&quot;Johnson&quot;,&quot;Stein&quot;)</code></pre>
+<p>If you, for instance, want to extract the first two letters of each name, you can use <code>substr()</code>:</p>
+<pre><code>substr(candidates,1,2)</code></pre>
+<p>If you want to extract the last two letters, utilize <code>nchar()</code>, since the total number of letters in each name is different:</p>
+<pre><code>substr(candidates,nchar(candidates)-1,nchar(candidates))</code></pre>
+<p>To replace the last two letters with something else,</p>
+<pre><code>substr(candidates,nchar(candidates)-1,nchar(candidates)) &lt;- &quot;:)&quot;
+candidates</code></pre>
+<p>If there is a mismatch between the number of characters to replace (here: 2) and the number of characters in the replacement string (here: 6), <code>R</code> will simply truncate. Here, that means only the first two characters in the replacement string are used.</p>
+<pre><code>substr(candidates,nchar(candidates)-1,nchar(candidates)) &lt;- &quot;:(:|:)&quot;
+candidates</code></pre>
+<hr />
+<div id="basic-string-functions-lab-exercises" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Basic String Functions: Lab Exercises<a href="strings.html#basic-string-functions-lab-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Please download and work through the following <code>R Markdown</code> file:</p>
+<p><a href="https://www.stat.cmu.edu/~pfreeman/string_functions.Rmd">string_functions.Rmd</a></p>
+<p>The solutions are provided <a href="https://www.stat.cmu.edu/~pfreeman/string_functions_sol.pdf">here</a>.</p>
+</div>
+</div>
+<div id="regular-expressions" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Regular Expressions<a href="strings.html#regular-expressions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Regexes are specially constructed strings that allow for flexible pattern matching. The rules for constructing regexes are independent of <code>R</code>; you may already know them. (But even then, reviewing them cannot hurt. Too much.)</p>
+<ul>
+<li>Literals: strings we want to <em>literally</em> match (e.g., “fly”, which does not match with “flies”)</li>
+<li>“Or”: for more flexible matching; if you want to match “fly” <em>or</em> “flies”, use “fly|flies”.</li>
+<li>Concatenation: “(a|b) (c|d)” is a concatenation of two regexes…use this if you want to find “a” or “b” followed by a space followed by “c” or “d”. Here, the parantheses define the group of possible literals that we are trying to match.</li>
+</ul>
+<hr />
+<p>The <code>grep()</code> function carries out matching.</p>
+<pre><code>str.vec &lt;- c(&quot;fly&quot;,&quot;Fly&quot;,&quot;flies&quot;)
+grep(&quot;fly&quot;,str.vec)               # grep is case-sensitive! This returns vector element(s) for match(es).
+grep(&quot;fly&quot;,str.vec,value=TRUE)    #                         This returns the vector value(s) for match(es).
+grep(&quot;fl&quot;,str.vec,value=TRUE)
+str.vec &lt;- c(&quot;time flies&quot;,&quot;fruit fly&quot;,&quot;fruit flies&quot;)
+grep(&quot;(time|fruit) flies&quot;,str.vec,value=TRUE)
+grep(&quot;fruit (time|times)&quot;,str.vec,value=TRUE)       # no error, just a zero-length vector</code></pre>
+<p><strong>NOTE:</strong> a very useful alternative to <code>grep()</code> is <code>grepl()</code>, or “logical grep”: instead of returning vector elements or the values themselves, it returns <code>TRUE</code> if there is a match, and <code>FALSE</code> otherwise.</p>
+<pre><code>grepl(&quot;(time|fruit) flies&quot;,str.vec)</code></pre>
+<hr />
+<p>We use square brackets when we want to specify a range of possible matching characters:</p>
+<ul>
+<li>“[abcde]” means “look for any string that contains a, b, c, d, or e” (case sensitive!)</li>
+<li>“[a-e]” means the same thing; the dash denotes a range</li>
+<li>“[^a-e]” means “look for any string that contain characters other than a, b, c, d, or e”</li>
+<li>“[1-4][2-6]” matches strings that contain the numbers 12-16, 22-26, 32-36, or 42-46</li>
+</ul>
+<pre><code>str.vec &lt;- c(&quot;I am 18 years old&quot;,&quot;I turned 24 yesterday&quot;,&quot;His age is 112&quot;)
+grep(&quot;[w-z]&quot;,str.vec,value=TRUE)
+grep(&quot;[^w-z]&quot;,str.vec,value=TRUE)
+grep(&quot;[1-4][2-6]&quot;,str.vec,value=TRUE)</code></pre>
+<p><strong>Note:</strong> do not use, e.g., “[2020]” to try to match the year 2020! This actually will match any string that has 2, 0, 2, or 0, or stated more concisely, 0 and 2, in it. Thus it will match with “2020” and “2002” and “2200” and “2345” and “0135”, etc.</p>
+<p>Other ways to specify particular character types include:</p>
+<ul>
+<li>“[[:alnum:]]”, which is the same as “[a-zA-Z0-9]”</li>
+<li>“[[:punct:]]”, which means “match any string that contains a punctuation mark”</li>
+<li>“[[:space:]]”, which means “match any string that contains a space, a tab, or a new line”</li>
+<li>“.”, which matches anything (and so is meaningless unless applied as in, e.g., “(a|b).(c|d)”)</li>
+</ul>
+<pre><code>str.vec &lt;- c(&quot;R2D2&quot;,&quot;r2d2&quot;,&quot;R2 D2&quot;,&quot;R2-D2&quot;)
+grep(&quot;[A-Z][0-9]&quot;,str.vec,value=TRUE)
+grep(&quot;[[:space:]]&quot;,str.vec,value=TRUE)
+grep(&quot;[[:punct:]]&quot;,str.vec,value=TRUE)</code></pre>
+<p>See <code>?regex</code> for more possibilities.</p>
+<hr />
+<p>Metacharacters are strings that are not to be intrepreted literally!
+The symbols . $ ^ * + ?  | { } [ ] ( ) are all metacharacters.</p>
+<p>To find occurrences of these symbols in strings, we need to use an escape sequence: we place a backslash in front of the symbol. (Note that in searches we have to double the number of backslashes because the backslash itself is a metacharacter!)</p>
+<pre><code>str.vec &lt;- c(&quot;que?&quot;,&quot;these symbols-[ and ]-are square brackets&quot;,&quot;:)&quot;,&quot;:-&gt;&quot;)
+grep(&quot;\\?&quot;,str.vec,value=TRUE)
+grep(&quot;\\]&quot;,str.vec,value=TRUE)
+grep(&quot;:\\)&quot;,str.vec,value=TRUE)
+grep(&quot;&gt;&quot;,str.vec,value=TRUE)</code></pre>
+<p><strong>Note:</strong> a single backslash in any string will not be interpreted as a single backslash, but rather as a backslash plus whatever character follows it. (For example, you cannot search for the backslash in the string <code>"\n"</code> because to <code>R</code>, the backslash and the “n” are implicitly combined together into a single entity that means “line break”.)</p>
+<hr />
+<p>Quantifiers in regexes allow us greater flexibility is searches.</p>
+<ul>
+<li>“+” means “occurs 1 or more times”</li>
+<li>“*” means “occurs 0 or more times”</li>
+<li>“?” means “the preceding regex is optional”…it differs from “*” in that “?” means “occurs 0 or 1 time” only</li>
+<li>“{n}”, “{n,}”, and “{n,m}” mean “exactly n”, “n or more”, and “between n and m inclusive” times; note that these only work in the way you’d expect in combination with other regexes</li>
+</ul>
+<p>A quantifier’s scope is what it is applied to. By default, the scope is the character preceding the quantifier. If you wish to have the quantifier apply to an entire group of characters, place parantheses around those characters.</p>
+<pre><code>str.vec &lt;- c(&quot;a&quot;,&quot;ab&quot;,&quot;ac&quot;,&quot;bc&quot;,&quot;cb&quot;,&quot;abb?&quot;,&quot;abab&quot;,&quot;10&quot;,&quot;100&quot;,&quot;1000&quot;)
+grep(&quot;ab+&quot;,str.vec,value=TRUE)
+grep(&quot;ab*&quot;,str.vec,value=TRUE)
+grep(&quot;bc?&quot;,str.vec,value=TRUE)
+grep(&quot;bc?\\?&quot;,str.vec,value=TRUE)
+grep(&quot;10{1,2}&quot;,str.vec,value=TRUE)         # doesn&#39;t actually match just 10 and 100</code></pre>
+<p>Admittedly, this last one is a bit confusing. Think of it as asking whether there is a “10” or a “100” in the string. “1000” has both a “10” and a “100”. You have to add more to the regex to limit the matches to the strings “10” and “100” only. See, e.g., the concept of anchoring below.</p>
+<pre><code>grep(&quot;(ab)+&quot;,str.vec,value=TRUE)
+grep(&quot;(ab){2}&quot;,str.vec,value=TRUE)
+grep(&quot;(00){2}&quot;,str.vec,value=TRUE)</code></pre>
+<hr />
+<p>When <code>^</code> is used outside of square brackets, it means we will only look for the match at the beginning of the string. (It “anchors” the search to the beginning of the string.)</p>
+<pre><code>str.vec &lt;- c(&quot;Win!&quot;,&quot;winner&quot;,&quot;I win.&quot;)
+grep(&quot;^[Ww]in&quot;,str.vec,value=TRUE)</code></pre>
+<p>Similarly, “$” looks for a match only at the end of the string.</p>
+<pre><code>str.vec &lt;- c(&quot;WIN&quot;,&quot;win&quot;,&quot;Winner winner chicken dinner&quot;)
+grep(&quot;[Nn]$&quot;,str.vec,value=TRUE)</code></pre>
+<hr />
+<pre><code>str &lt;- &quot;keep ... on ....swimming... swimming.......swimming...&quot;
+strsplit(str,split=&quot; *\\.+ *&quot;)       # 0+ spaces followed by 1+ periods followed by 0+ spaces</code></pre>
+<p>Note that the output of <code>strsplit()</code> is a list. Here, the input is a single string, so the output list has only one element that contains the split vector of strings. In cases like this, applying <code>unlist()</code> can be helpful.</p>
+<pre><code>str &lt;- &quot;keep on swimming; swimming;  swimming;   swimming&quot;
+unlist(strsplit(str,split=&quot;;? +&quot;))   # optional semi-colon followed by 1+ spaces</code></pre>
+<hr />
+<div id="regular-expressions-lab-exercises" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Regular Expressions: Lab Exercises<a href="strings.html#regular-expressions-lab-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Please download and work through the following <code>R Markdown</code> file:</p>
+<p><a href="https://www.stat.cmu.edu/~pfreeman/regex.Rmd">regex.Rmd</a></p>
+<p>The solutions are provided <a href="https://www.stat.cmu.edu/~pfreeman/regex_sol.pdf">here</a>.</p>
+</div>
+</div>
+<div id="string-extraction-and-replacement" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> String Extraction and Replacement<a href="strings.html#string-extraction-and-replacement" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s say that instead of receiving an entire string that contains a matching substring, which is what you would receive if you use <code>grep()</code> with <code>value=TRUE</code>, you just want that substring. To get just the substring, use a combination of <code>regexpr()</code> and <code>regmatches()</code>:</p>
+<ul>
+<li><code>regexpr()</code> returns the location of the <em>first</em> match in the target string (or -1 if no match is found); and</li>
+<li><code>regmatches()</code> takes the output of <code>regexpr()</code> and returns the matching substring.</li>
+</ul>
+<p>An example of string extraction:</p>
+<pre><code>str.vec &lt;- c(&quot;abccc&quot;,&quot;ababc&quot;,&quot;cabcc&quot;,&quot;ccabb&quot;,&quot;ccccc&quot;)
+reg.exp &lt;- regexpr(&quot;ab+&quot;,str.vec,useBytes=TRUE)
+reg.exp
+regmatches(str.vec,reg.exp)</code></pre>
+<p>The first line of output tells you <em>where</em> in the string the match occurs, and that the <code>match.length</code> attribute tells you the length of the matching substring in characters.</p>
+<p>You can also use <code>regmatches()</code> to specify a replacement for these substrings:</p>
+<pre><code>regmatches(str.vec,reg.exp) &lt;- &quot;xy&quot;
+str.vec</code></pre>
+<p>Notice that in the second string, only the first instance of “ab” is replaced. Again, as we have been using it up to now, <code>regexpr()</code> will only return the <em>first</em> matching substring. To get all the matching substrings in a given string, use <code>gregexpr()</code>:</p>
+<pre><code>str.vec  &lt;- c(&quot;abab&quot;,&quot;abAB&quot;,&quot;ABAB&quot;,&quot;ccAbCC&quot;)
+greg.exp &lt;- gregexpr(&quot;ab|AB&quot;,str.vec)
+regmatches(str.vec,greg.exp)                # returns a list, one element per input string
+regmatches(str.vec,greg.exp) &lt;- &quot;xy&quot;
+str.vec</code></pre>
+<p>As an alternative, we can use <code>sub()</code> and <code>gsub()</code>:</p>
+<pre><code>str.vec &lt;- c(&quot;abab&quot;,&quot;abAB&quot;,&quot;ABAB&quot;,&quot;ccAbCC&quot;)
+sub(&quot;ab|AB&quot;,&quot;xy&quot;,str.vec)                   # sub(): replace first occurrence of matching substring
+str.vec</code></pre>
+<p>Note that unlike before, the original string vector is not itself changed! If you need, e.g., to compare how your initial and final strings appear, <code>sub()</code> or <code>gsub()</code> is the way to go. The difference: <code>sub()</code> replaces the first occurrence of the matching substring, while <code>gsub()</code> replaces all occurrences of the matching substring.</p>
+<pre><code>str.vec  &lt;- c(&quot;abab&quot;,&quot;abAB&quot;,&quot;ABAB&quot;,&quot;ccAbCC&quot;)
+gsub.out &lt;- gsub(&quot;ab|AB&quot;,&quot;xy&quot;,str.vec)
+gsub.out</code></pre>
+<hr />
+<div id="string-extraction-and-replacement-lab-exercises" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> String Extraction and Replacement: Lab Exercises<a href="strings.html#string-extraction-and-replacement-lab-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Please download and work through the following <code>R Markdown</code> file:</p>
+<p><a href="https://www.stat.cmu.edu/~pfreeman/string_extraction.Rmd">string_extraction.Rmd</a></p>
+<p>The solutions are provided <a href="https://www.stat.cmu.edu/~pfreeman/string_extraction_sol.pdf">here</a>.</p>
+
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="vectors-and-lists.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-frames-and-data-manipulation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

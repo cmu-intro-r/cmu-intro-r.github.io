@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>An Introduction to R</title>
+  <meta name="description" content="An Introduction to R" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="An Introduction to R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="An Introduction to R" />
+  
+  
+  
+
+<meta name="author" content="Peter E. Freeman (Department of Statistics &amp; Data Science, Carnegie Mellon University)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="getting-started.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting Started</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="getting-started.html"><a href="getting-started.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.2" data-path="getting-started.html"><a href="getting-started.html#the-rstudio-layout"><i class="fa fa-check"></i><b>1.2</b> The RStudio Layout</a></li>
+<li class="chapter" data-level="1.3" data-path="getting-started.html"><a href="getting-started.html#what-is-r"><i class="fa fa-check"></i><b>1.3</b> What is R?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html"><i class="fa fa-check"></i><b>2</b> Vectors and Lists</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-vectors"><i class="fa fa-check"></i><b>2.1</b> All About Vectors</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-vectors-lab-exercises"><i class="fa fa-check"></i><b>2.1.1</b> All About Vectors: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-lists"><i class="fa fa-check"></i><b>2.2</b> All About Lists</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-lists-lab-exercises"><i class="fa fa-check"></i><b>2.2.1</b> All About Lists: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#handy-vector-functions"><i class="fa fa-check"></i><b>2.3</b> Handy Vector Functions</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#handy-vector-functions-lab-exercises"><i class="fa fa-check"></i><b>2.3.1</b> Handy Vector Functions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#control-flow-constructs"><i class="fa fa-check"></i><b>2.4</b> Control-Flow Constructs</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#control-flow-constructs-lab-exercises"><i class="fa fa-check"></i><b>2.4.1</b> Control-Flow Constructs: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#loops"><i class="fa fa-check"></i><b>2.5</b> Loops</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#loops-lab-exercises"><i class="fa fa-check"></i><b>2.5.1</b> Loops: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>3</b> Strings</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="strings.html"><a href="strings.html#basic-string-functions"><i class="fa fa-check"></i><b>3.1</b> Basic String Functions</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="strings.html"><a href="strings.html#basic-string-functions-lab-exercises"><i class="fa fa-check"></i><b>3.1.1</b> Basic String Functions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="strings.html"><a href="strings.html#regular-expressions"><i class="fa fa-check"></i><b>3.2</b> Regular Expressions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="strings.html"><a href="strings.html#regular-expressions-lab-exercises"><i class="fa fa-check"></i><b>3.2.1</b> Regular Expressions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="strings.html"><a href="strings.html#string-extraction-and-replacement"><i class="fa fa-check"></i><b>3.3</b> String Extraction and Replacement</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="strings.html"><a href="strings.html#string-extraction-and-replacement-lab-exercises"><i class="fa fa-check"></i><b>3.3.1</b> String Extraction and Replacement: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html"><i class="fa fa-check"></i><b>4</b> Data Frames and Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-io"><i class="fa fa-check"></i><b>4.1</b> Data I/O</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-io-lab-exercises"><i class="fa fa-check"></i><b>4.1.1</b> Data I/O: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#splitapplycombine"><i class="fa fa-check"></i><b>4.2</b> Split/Apply/Combine</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#splitapplycombine-lab-exercises"><i class="fa fa-check"></i><b>4.2.1</b> Split/Apply/Combine: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#pipes"><i class="fa fa-check"></i><b>4.3</b> Pipes</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#pipes-lab-exercises"><i class="fa fa-check"></i><b>4.3.1</b> Pipes: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-manipulation-with-dplyr"><i class="fa fa-check"></i><b>4.4</b> Data Manipulation with dplyr</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-manipulation-with-dplyr-lab-exercises"><i class="fa fa-check"></i><b>4.4.1</b> Data Manipulation with dplyr: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">An Introduction to R</h1>
+<p class="author"><em>Peter E. Freeman (Department of Statistics &amp; Data Science, Carnegie Mellon University)</em></p>
+<p class="date"><em>July 2024</em></p>
+</div>
+<div id="preface" class="section level1 unnumbered hasAnchor">
+<h1>Preface<a href="preface.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The purpose of this “book” is to provide students in our camps and
+certification courses a brief and basic introduction to the <code>R</code> programming
+language, so that they may “hit the ground running” when they begin
+participating in our programs. The material presented here corresponds
+roughly to that I presented during the first three-to-four weeks of
+the course 36-350, <em>Statistical Computing</em>, when I taught it last in
+Fall 2020.</p>
+<p>If you have any questions or concerns, or if you find any typos(!), please
+contact me at pfreeman AT cmu DOT edu.</p>
+<p>Peter Freeman<br>
+July 2024</p>
+
+<div style="page-break-after: always;"></div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="getting-started.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

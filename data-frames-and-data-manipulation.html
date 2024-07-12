@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Data Frames and Data Manipulation | An Introduction to R</title>
+  <meta name="description" content="4 Data Frames and Data Manipulation | An Introduction to R" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Data Frames and Data Manipulation | An Introduction to R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Data Frames and Data Manipulation | An Introduction to R" />
+  
+  
+  
+
+<meta name="author" content="Peter E. Freeman (Department of Statistics &amp; Data Science, Carnegie Mellon University)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="strings.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting Started</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="getting-started.html"><a href="getting-started.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.2" data-path="getting-started.html"><a href="getting-started.html#the-rstudio-layout"><i class="fa fa-check"></i><b>1.2</b> The RStudio Layout</a></li>
+<li class="chapter" data-level="1.3" data-path="getting-started.html"><a href="getting-started.html#what-is-r"><i class="fa fa-check"></i><b>1.3</b> What is R?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html"><i class="fa fa-check"></i><b>2</b> Vectors and Lists</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-vectors"><i class="fa fa-check"></i><b>2.1</b> All About Vectors</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-vectors-lab-exercises"><i class="fa fa-check"></i><b>2.1.1</b> All About Vectors: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-lists"><i class="fa fa-check"></i><b>2.2</b> All About Lists</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-lists-lab-exercises"><i class="fa fa-check"></i><b>2.2.1</b> All About Lists: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#handy-vector-functions"><i class="fa fa-check"></i><b>2.3</b> Handy Vector Functions</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#handy-vector-functions-lab-exercises"><i class="fa fa-check"></i><b>2.3.1</b> Handy Vector Functions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#control-flow-constructs"><i class="fa fa-check"></i><b>2.4</b> Control-Flow Constructs</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#control-flow-constructs-lab-exercises"><i class="fa fa-check"></i><b>2.4.1</b> Control-Flow Constructs: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#loops"><i class="fa fa-check"></i><b>2.5</b> Loops</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#loops-lab-exercises"><i class="fa fa-check"></i><b>2.5.1</b> Loops: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>3</b> Strings</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="strings.html"><a href="strings.html#basic-string-functions"><i class="fa fa-check"></i><b>3.1</b> Basic String Functions</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="strings.html"><a href="strings.html#basic-string-functions-lab-exercises"><i class="fa fa-check"></i><b>3.1.1</b> Basic String Functions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="strings.html"><a href="strings.html#regular-expressions"><i class="fa fa-check"></i><b>3.2</b> Regular Expressions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="strings.html"><a href="strings.html#regular-expressions-lab-exercises"><i class="fa fa-check"></i><b>3.2.1</b> Regular Expressions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="strings.html"><a href="strings.html#string-extraction-and-replacement"><i class="fa fa-check"></i><b>3.3</b> String Extraction and Replacement</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="strings.html"><a href="strings.html#string-extraction-and-replacement-lab-exercises"><i class="fa fa-check"></i><b>3.3.1</b> String Extraction and Replacement: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html"><i class="fa fa-check"></i><b>4</b> Data Frames and Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-io"><i class="fa fa-check"></i><b>4.1</b> Data I/O</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-io-lab-exercises"><i class="fa fa-check"></i><b>4.1.1</b> Data I/O: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#splitapplycombine"><i class="fa fa-check"></i><b>4.2</b> Split/Apply/Combine</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#splitapplycombine-lab-exercises"><i class="fa fa-check"></i><b>4.2.1</b> Split/Apply/Combine: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#pipes"><i class="fa fa-check"></i><b>4.3</b> Pipes</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#pipes-lab-exercises"><i class="fa fa-check"></i><b>4.3.1</b> Pipes: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-manipulation-with-dplyr"><i class="fa fa-check"></i><b>4.4</b> Data Manipulation with dplyr</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-manipulation-with-dplyr-lab-exercises"><i class="fa fa-check"></i><b>4.4.1</b> Data Manipulation with dplyr: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-frames-and-data-manipulation" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Data Frames and Data Manipulation<a href="data-frames-and-data-manipulation.html#data-frames-and-data-manipulation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="data-io" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Data I/O<a href="data-frames-and-data-manipulation.html#data-io" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The data input and output functions that are provided here are those of what we would call “base <code>R</code>.” Simply note for now that there is more data I/O functionality available through the <code>tidyverse</code> package.</p>
+<p>If your data file is an ASCII (i.e., human-readable) text file…</p>
+<p><img src="figures/GalaxyStatistics.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>then you will generally use <code>read.table()</code> or <code>read.csv()</code>.</p>
+<ul>
+<li><code>read.table()</code>: used with data whose values are separated by spaces</li>
+<li><code>read.csv()</code>: used when you have “comma-separated values”</li>
+</ul>
+<p>Other alternatives include <code>read.delim()</code> and <code>scan()</code> (for more general formats), along with <code>readLines()</code> (which simply reads each line of a file into an element of a character vector).</p>
+<p>We won’t go into binary (i.e., non-human-readable) files, as how to read in their data can be highly domain specific. To get a handle on how you might proceed if a binary reader has not already been coded for you, see the help page for <code>connections</code>.</p>
+<hr />
+<p><img src="figures/read.table.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>Beware the arguments!</p>
+<ul>
+<li><code>header</code> provides column names, and is <code>FALSE</code> by default for <code>read.table()</code></li>
+<li><code>stringsAsFactors</code> is default <code>TRUE</code> and will lead to your character string vector being treated as a factor variable</li>
+<li><code>na.strings</code> is <code>NA</code> by default, but beware: domain scientists use many symbols and/or numbers to indicate that data are missing (like -99)</li>
+</ul>
+<p>Other important arguments:</p>
+<ul>
+<li><code>skip</code>: if there are lines of metadata preceding the first line of data, use <code>skip</code> to skip over them.</li>
+<li><code>nrows</code>: instead of reading the whole file, read in this many rows only</li>
+</ul>
+<p>Side effects:</p>
+<p>If your column name has white spaces, <code>read.table()</code> and <code>read.csv()</code> will fill them in with periods.</p>
+<hr />
+<p>As you might expect, <code>read.table()</code> and <code>read.csv()</code> have analogous write functions: <code>write.table()</code> and <code>write.csv()</code>. The two main arguments to look out for are:</p>
+<ul>
+<li><code>quote</code>: default <code>TRUE</code>…it puts double quotes around your column (and row) names. Set this to <code>FALSE</code>.</li>
+<li><code>row.names</code>: default <code>TRUE</code>…which means, if you don’t have row names in your data frame, you’ll have “1”, “2”, etc. as the row names in your output. Also set this to <code>FALSE</code> if you don’t have row names already.</li>
+</ul>
+<hr />
+<p>One can save <code>R</code> objects (vectors, data frames, etc.) in a binary format, so as to be loaded later:</p>
+<pre><code>x &lt;- 5
+y &lt;- list(a=1:2,b=TRUE)
+save(x,y,file=&quot;tmp.Rdata&quot;)
+rm(x,y)
+gc()
+load(&quot;tmp.Rdata&quot;)
+x
+y</code></pre>
+<p>Note the following:</p>
+<ul>
+<li>The suffixes <code>.Rdata</code> and <code>.Rda</code> are interchangable</li>
+<li>There is a <code>saveRDS()</code> function which saves <em>one</em> <code>R</code> object in a file with suffix <code>.Rds</code>…this object may be given a new name when read in with <code>readRDS()</code></li>
+</ul>
+<hr />
+<div id="data-io-lab-exercises" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Data I/O: Lab Exercises<a href="data-frames-and-data-manipulation.html#data-io-lab-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Please download and work through the following <code>R Markdown</code> file:</p>
+<p><a href="https://www.stat.cmu.edu/~pfreeman/data_io.Rmd">data_io.Rmd</a></p>
+<p>The solutions are provided <a href="https://www.stat.cmu.edu/~pfreeman/data_io_sol.pdf">here</a>.</p>
+<p>To complete the lab, you will need to download the following datasets:
+<a href="https://www.stat.cmu.edu/~pfreeman/emline.csv">emline.csv</a>,
+<a href="https://www.stat.cmu.edu/~pfreeman/simple.txt">simple.txt</a>,
+<a href="https://www.stat.cmu.edu/~pfreeman/students.csv">students.csv</a>, and
+<a href="https://www.stat.cmu.edu/~pfreeman/students.txt">students.txt</a>.</p>
+</div>
+</div>
+<div id="splitapplycombine" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Split/Apply/Combine<a href="data-frames-and-data-manipulation.html#splitapplycombine" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The split-apply-combine paradigm is straightforward: you take a data frame that contains one or more columns with factor variables (i.e., data measured in categories), and</p>
+<ul>
+<li><em>split</em> it, e.g., break the data frame up into a list of smaller data frames, one for each factor or combination of factors;</li>
+<li><em>apply</em> a function to each of the smaller data frames; and</li>
+<li><em>combine</em> the results together. (Note that there is no explicit “combine” function in <code>R</code>, per se; combination often “just occurs” as a by-product of application.)</li>
+</ul>
+<p>One can do this with base <code>R</code> functions, although there are some limitations that can crop up from time to time. (See, e.g., <a href="https://www.jstatsoft.org/article/view/v040i01">this paper in the Journal of Statistical Software</a>. Thus after discussing typical base <code>R</code> functions we will begin venturing into the <code>tidyverse</code>, to talk about <code>dplyr</code>, etc.</p>
+<hr />
+<p>Above, we use the word “factors.” It is inevitable that in statistical analyses you will at some point have to deal with factors: variables with discrete values that often do not clearly map to the real number line. For instance, the <code>state</code> dataset (part of <code>R</code>’s <code>datasets</code> package) includes <code>state.region</code>, which labels each state with the region of the U.S. it is in:</p>
+<pre><code>state.region</code></pre>
+<p>Note that there are four (not five) levels for this factor: “Northeast,” “South,” “North Central,” and “West.”</p>
+<pre><code>levels(state.region)</code></pre>
+<p>How are factor variables treated in regression? As numbers, counting from one.</p>
+<pre><code>typeof(state.region)  # R views the factors as integers, not words
+class(state.region)   # ...and it knows the factors are factors
+levels(state.region)  # The levels are 1, 2, 3, ... from left to right
+as.numeric(state.region)</code></pre>
+<p>The base-<code>R</code> <code>split()</code> function splits up the rows of a data frame (or elements of a vector) according to the levels of one or more factors.</p>
+<p>Usage: <code>split(df,f=my.index)</code>, where <code>df</code> is a data frame (vectors are allowed too) and <code>my.index</code> specifies the factor variable(s). The output is a list of data frames (or vectors).</p>
+<pre><code>galaxy.df = read.table(&quot;http://www.stat.cmu.edu/~pfreeman/GalaxyStatistics.txt&quot;,header=TRUE,
+                       stringsAsFactors=TRUE)
+dim(galaxy.df)           # a field and two statistics for 8358 galaxies
+levels(galaxy.df$Field)  # IDs of the five fields
+galaxy.split &lt;- split(galaxy.df,f=galaxy.df$Field)
+typeof(galaxy.split)
+names(galaxy.split)
+head(galaxy.split[[1]],5)  # let&#39;s look at the first list component</code></pre>
+<hr />
+<p>The <code>apply()</code> function works as follows:</p>
+<pre><code>apply(&lt;data frame/matrix&gt;,MARGIN=&lt;dim&gt;,FUN=&lt;function&gt;)</code></pre>
+<ul>
+<li><code>&lt;dim&gt;</code> = 1 for rows, 2 for columns, etc. The dimensionality is not limited to 2!</li>
+<li><code>&lt;function&gt;</code> is an existing <code>R</code> function or one that you write yourself</li>
+</ul>
+<p>Example: you have a data frame whose two columns contain three random samples from a standard normal and three random samples from a Uniform(0,1) distribution respectively. We determine the range, the mean, and the index of the maximum value in each column…</p>
+<pre><code>set.seed(101)
+df &lt;- data.frame(n=rnorm(3),u=runif(3))
+apply(df,MARGIN=2,FUN=range)
+apply(df,MARGIN=2,FUN=mean)
+apply(df,2,which.max)         # dropping the argument names</code></pre>
+<p>To apply your own function: define it, then pass it along. Here, let’s define a function that gives the index of the maximum value, and the maximum value itself, along each row of a matrix:</p>
+<pre><code>mat    &lt;- matrix(rnorm(9),nrow=3)
+my.fun &lt;- function(x) { return(c(which.max(x),max(x))) }  # Note: x is the row/column of interest
+mat
+apply(mat,1,my.fun)</code></pre>
+<p>Note: if <code>my.fun()</code> returns <span class="math inline">\(k\)</span> separate values, then the output will have <span class="math inline">\(k\)</span> rows, regardless of the value for <code>MARGIN</code>. When <code>MARGIN</code>=2, that’s generally OK, but when it equals 1 you might want to transpose your output to create something more easily interpreted:</p>
+<pre><code>t(apply(mat,1,my.fun))  # Now each row of output corresponds to a row of input</code></pre>
+<p>You need not define the function before the call to <code>apply()</code>:</p>
+<pre><code>t(apply(mat,1,function(x){c(which.max(x),max(x))}))</code></pre>
+<hr />
+<p>Up until now, the functions that are passed to <code>apply()</code> have a single argument (or only need to have a single argument specified, with the rest having default values), usually given as <code>x</code>.</p>
+<p>If you need to specify additional arguments for the function, specify them in the call to <code>apply()</code>:</p>
+<pre><code>mat &lt;- matrix(runif(100),10,10)
+apply(mat,1,mean)               # compute row means
+apply(mat,1,mean,trim=0.1)      # compute 10% trimmed means for each row</code></pre>
+<hr />
+<p>To review:</p>
+<ul>
+<li>if <code>my.fun()</code> returns a single value, <code>apply()</code> will return a vector of values, one for each row of input if <code>MARGIN</code> = 1, or each column of input if <code>MARGIN</code> = 2</li>
+<li>if <code>my.fun()</code> returns a vector of values of length <span class="math inline">\(k\)</span>, <code>apply()</code> will return a <span class="math inline">\(k \times n\)</span> matrix, where <span class="math inline">\(n\)</span> is the number of rows (or columns) of input if <code>MARGIN</code> = 1 (or 2)…you may need to transpose the output with <code>t()</code> to more easily interpret it, if <code>MARGIN = 1</code></li>
+<li>if <code>my.fun()</code> returns vectors of differents lengths for each input row (or column), the output of <code>apply()</code> will be a list of length the number of rows (or columns)</li>
+<li>if <code>my.fun()</code> returns a list for each input row (or column), the output of <code>apply()</code> will be a list of lists of length the number of rows (or columns)</li>
+</ul>
+<p>However, don’t use <code>apply()</code> to do everything. There are optimized functions that allow one to compute…</p>
+<ul>
+<li>sums along rows (or columns): <code>rowSums()</code> (or <code>colSums()</code>)</li>
+<li>means along rows (or columns): <code>rowMeans()</code> (or <code>colMeans()</code>)</li>
+<li>the position of the maximum value along each row of a matrix: <code>max.col()</code></li>
+</ul>
+<hr />
+<div id="splitapplycombine-lab-exercises" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Split/Apply/Combine: Lab Exercises<a href="data-frames-and-data-manipulation.html#splitapplycombine-lab-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Please download and work through the following <code>R Markdown</code> file:</p>
+<p><a href="https://www.stat.cmu.edu/~pfreeman/split_apply.Rmd">split_apply.Rmd</a></p>
+<p>The solutions are provided <a href="https://www.stat.cmu.edu/~pfreeman/split_apply_sol.pdf">here</a>.</p>
+</div>
+</div>
+<div id="pipes" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Pipes<a href="data-frames-and-data-manipulation.html#pipes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>tidyverse</code>, which contain variants of split-apply-combine functions existing outside of base <code>R</code>, relies on so-called “pipes.” What do we need to know about pipes?</p>
+<ul>
+<li><code>tidyverse</code> functions perform at their best when strung together using the pipe operator.</li>
+<li>The pipe operator is <code>%&gt;%</code>. <strong>NOTE:</strong> use <code>ctrl + shift + m</code> as an <code>RStudio</code> shortcut.</li>
+<li>The pipe operator actually comes from the <code>magrittr</code> package (automatically loaded with the <code>tidyverse</code>), so it can be used on its own, completely independently of the rest of the <code>tidyverse</code>.</li>
+</ul>
+<p>But what does a pipe <em>do</em>?</p>
+<p>It takes the return value from one function call and automatically feeds it in as an input to another function.</p>
+<p>Note that at the <code>Unix</code> command line, for instance, we also have pipes, as in:</p>
+<pre><code>ls -l | grep tidy | wc -l</code></pre>
+<p>This lists all the files in the present directory, selects those with the string “tidy” in them, then determines word counts for just those files.</p>
+<hr />
+<p>Normally you would just load the entire <code>tidyverse</code>, but just to make the point that the <code>magrittr</code> package is the one with the pipe, and that the pipe can be used with non-<code>tidyverse</code> functions, we’ll load <code>magrittr</code> alone.</p>
+<pre><code># install the package if it doesn&#39;t exist...
+# require() will load it if it is there as a side-effect
+if ( require(magrittr) == FALSE ) {
+  install.packages(&quot;magrittr&quot;,repos=&quot;https://cloud.r-project.org&quot;)
+  library(magrittr)
+}</code></pre>
+<hr />
+<p>We can write exp(1) with pipes as <code>1 %&gt;% exp()</code>, and log(exp(1)) as <code>1 %&gt;% exp() %&gt;% log()</code></p>
+<pre><code>exp(1)
+1 %&gt;% exp() # actually, you don&#39;t even need the parantheses if there was to be only one argument
+1 %&gt;% exp %&gt;% log</code></pre>
+<hr />
+<p>Passing a single argument through pipes, we interpret something like:</p>
+<pre><code>x %&gt;% f %&gt;% g %&gt;% h # don&#39;t code this! it is a visual example</code></pre>
+<p>as <code>h(g(f(x)))</code>. So, in your mind, when you see <code>%&gt;%</code>, you should say “and then.”</p>
+<p>To pass a single value <code>x</code> to a function that has, e.g., two arguments (x and y), you would write</p>
+<pre><code>x %&gt;% f(y) # don&#39;t code this either! </code></pre>
+<p>Here, <code>x</code> is assumed to be the first argument of <code>f()</code>, and <code>y</code> the second. Later we will see how to generalize this so that <code>x</code> need not be the first argument of <code>f()</code>.</p>
+<p>See if you can interpret the command below without running it, then run it in your <code>R</code> console to check your understanding:</p>
+<pre><code>mtcars %&gt;% head(4) %&gt;% View</code></pre>
+<p>(Note: <code>mtcars</code> is one of the many datasets that are included in the base-<code>R</code> environment. To see a list of all of the datasets, use <code>library(help="datasets")</code>.)</p>
+<p>The answer: it takes the data frame <code>mtcars</code> (32 rows, 11 columns), extracts the first four rows, then passes those four rows to a viewer.</p>
+<p>What’s the “old school” (i.e., base <code>R</code>) way of doing this?</p>
+<pre><code>View(head(mtcars,4))</code></pre>
+<p>Notice that, with pipes:</p>
+<ul>
+<li>your code is more easily read and interpreted (arguably); and</li>
+<li>you can run partial commands more easily (which is helpful for debugging).</li>
+</ul>
+<hr />
+<p>The command <code>x %&gt;% f(y)</code> can be equivalently written in <em>dot notation</em> as:</p>
+<pre><code>x %&gt;% f(.,y) # and don&#39;t code this</code></pre>
+<p>What’s the advantage of using dots? Sometimes you want to pass in a variable as the second or third (meaning, not first) argument to a function, with a pipe. As in…</p>
+<pre><code>x %&gt;% f(y,.) # nor this</code></pre>
+<p>which is equivalent to evaluating <code>f(y,x)</code>.</p>
+<p>Again, see if you can interpret the code below without running it, then run it in your <code>R</code> console as a way to check your understanding:</p>
+<pre><code>x &lt;- seq(-2*pi,2*pi,len=1000)
+x %&gt;% sin %&gt;% abs %&gt;% plot(x,.,typ=&quot;l&quot;)</code></pre>
+<hr />
+<div id="pipes-lab-exercises" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Pipes: Lab Exercises<a href="data-frames-and-data-manipulation.html#pipes-lab-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Please download and work through the following <code>R Markdown</code> file:</p>
+<p><a href="https://www.stat.cmu.edu/~pfreeman/pipes.Rmd">pipes.Rmd</a></p>
+<p>The solutions are provided <a href="https://www.stat.cmu.edu/~pfreeman/pipes_sol.pdf">here</a>.</p>
+</div>
+</div>
+<div id="data-manipulation-with-dplyr" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Data Manipulation with dplyr<a href="data-frames-and-data-manipulation.html#data-manipulation-with-dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To make sense of this set of slides, think of data frames as nouns and <code>dplyr</code> functions as verbs, actions that you apply to manipulate the data frames. Here, we will learn the following <code>dplyr</code> verbs:</p>
+<ul>
+<li><code>slice()</code>: subset rows based on integer indexing</li>
+<li><code>filter()</code>: subset rows based on logical criteria</li>
+<li><code>select()</code>: select certain columns</li>
+<li><code>arrange()</code>: order rows by value of a column</li>
+<li><code>rename()</code>: rename columns</li>
+<li><code>mutate()</code>: create new columns</li>
+<li><code>mutate_at()</code>: apply a function to given columns</li>
+</ul>
+<p>Calling <code>dplyr</code> verbs always outputs a new data frame; it does not alter the existing data frame. To save the new data frame, simply assign it to a variable, as in <code>df.new &lt;- df %&gt;% ...</code> or <code>df %&gt;% ... -&gt; df.new</code>.</p>
+<p>So to keep the changes, we have to reassign the data frame to be the output of the pipe, as we will see below.</p>
+<hr />
+<p>To load the <code>tidyverse</code>…</p>
+<pre><code># install the package if it doesn&#39;t exist...
+# require() will load it if it is there as a side-effect
+if ( require(tidyverse) == FALSE ) {
+  install.packages(&quot;tidyverse&quot;,repos=&quot;https://cloud.r-project.org&quot;)
+  suppressWarnings(library(tidyverse))
+}</code></pre>
+<hr />
+<p>Use <code>slice()</code> when you want to indicate certain row numbers need to be kept:</p>
+<pre><code>mtcars %&gt;% slice(c(7,8,14:15))
+# Compare with base R: mtcars[c(7,8,14:15),]</code></pre>
+<p>Slicing can also be done “negatively”:</p>
+<pre><code>mtcars %&gt;% slice(-c(1:2,19:23)) %&gt;% nrow()</code></pre>
+<hr />
+<p>Use <code>filter()</code> when you want to subset rows based on logical conditions:</p>
+<pre><code>mtcars %&gt;% filter(., (mpg &gt;= 14 &amp; disp &gt;= 200) | (drat &lt;= 3)) %&gt;% head(., 2)
+# Base R:
+# head(subset(mtcars, (mpg &gt;= 14 &amp; disp &gt;= 200) | (drat &lt;= 3)), 2)
+# head(mtcars[(mtcars$mpg &gt;= 14 &amp; mtcars$disp &gt;= 200) | (mtcars$drat &lt;= 3),], 2)</code></pre>
+<hr />
+<p>Use <code>select()</code> when you want to pick out certain columns:</p>
+<pre><code>mtcars %&gt;% select(., cyl, disp, hp) %&gt;% head(., 2)
+# Base R:
+# head(mtcars[, c(&quot;cyl&quot;, &quot;disp&quot;, &quot;hp&quot;)], 2)</code></pre>
+<p>Very handy selections using dplyr helper functions:</p>
+<pre><code>mtcars %&gt;% select(., starts_with(&quot;d&quot;)) %&gt;% head(., 2)
+# Base R (yikes!):
+# d_colnames &lt;- grep(x = colnames(mtcars), pattern = &quot;^d&quot;)
+# head(mtcars[, d_colnames], 2)</code></pre>
+<p>We can do many other things as well:</p>
+<pre><code>mtcars %&gt;% select(., ends_with(&#39;t&#39;)) %&gt;% head(., 2)
+mtcars %&gt;% select(., ends_with(&#39;yl&#39;)) %&gt;% head(., 2)
+mtcars %&gt;% select(., contains(&#39;ar&#39;)) %&gt;% head(., 2)</code></pre>
+<hr />
+<p>Use <code>arrange()</code> to order rows by values of a column:</p>
+<pre><code>mtcars %&gt;% arrange(., desc(drat)) %&gt;% select(., mpg, disp, drat) %&gt;% head(., 2)
+# Base R:
+# drat_inds &lt;- order(mtcars$drat, decreasing=TRUE)
+# head(mtcars[drat_inds, c(&quot;mpg&quot;, &quot;disp&quot;, &quot;drat&quot;)], 2)</code></pre>
+<p>We can order by multiple columns too:</p>
+<pre><code>mtcars %&gt;% arrange(., desc(gear), desc(hp)) %&gt;% select(., gear, hp, everything()) %&gt;% head(., 8)</code></pre>
+<p>Here, we arrange first in order of <code>gear</code> (decreasing); then, for each unique value of <code>gear</code>, we arrange in order of <code>hp</code> (decreasing).</p>
+<hr />
+<p>Use <code>mutate()</code> when you want to create one or several columns:</p>
+<pre><code>mtcars = mtcars %&gt;% mutate(., hp_wt = hp/wt, mpg_wt = mpg/wt)
+# Base R:
+# mtcars$hp_wt &lt;- mtcars$hp/mtcars$wt
+# mtcars$mpg_wt &lt;- mtcars$mpg/mtcars$wt</code></pre>
+<p>Use <code>mutate_at()</code> when you want to apply a function to one or several columns:</p>
+<pre><code>mtcars &lt;- mtcars %&gt;% mutate_at(., c(&quot;hp_wt&quot;, &quot;mpg_wt&quot;), log)
+# Base R:
+# mtcars$hp_wt &lt;- log(mtcars$hp_wt)
+# mtcars$mpg_wt &lt;- log(mtcars$mpg_wt)</code></pre>
+<p><strong>NOTE:</strong> again, calling <code>mutate_at()</code> outputs a new data frame and does not alter the given data frame, so to keep the column transformations, we have to reassign <code>mtcars</code> to be the output of the pipe!</p>
+<hr />
+<p>Use <code>rename()</code> to easily rename columns:</p>
+<pre><code>mtcars %&gt;% rename(., hp_wt_log=hp_wt, mpg_wt_log=mpg_wt) %&gt;% head(., 2)
+# Base R:
+# colnames(mtcars)[colnames(mtcars)==&quot;hp_wt&quot;] &lt;- &quot;hp_wt_log&quot;
+# colnames(mtcars)[colnames(mtcars)==&quot;mpg_wt&quot;] &lt;- &quot;mpg_wt_log&quot;
+# head(mtcars, 2)</code></pre>
+<hr />
+<div id="data-manipulation-with-dplyr-lab-exercises" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Data Manipulation with dplyr: Lab Exercises<a href="data-frames-and-data-manipulation.html#data-manipulation-with-dplyr-lab-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Please download and work through the following <code>R Markdown</code> file:</p>
+<p><a href="https://www.stat.cmu.edu/~pfreeman/dplyr.Rmd">dplyr.Rmd</a></p>
+<p>The solutions are provided <a href="https://www.stat.cmu.edu/~pfreeman/dplyr_sol.pdf">here</a>.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="strings.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

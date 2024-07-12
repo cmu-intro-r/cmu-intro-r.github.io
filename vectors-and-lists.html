@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Vectors and Lists | An Introduction to R</title>
+  <meta name="description" content="2 Vectors and Lists | An Introduction to R" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Vectors and Lists | An Introduction to R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Vectors and Lists | An Introduction to R" />
+  
+  
+  
+
+<meta name="author" content="Peter E. Freeman (Department of Statistics &amp; Data Science, Carnegie Mellon University)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="getting-started.html"/>
+<link rel="next" href="strings.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting Started</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="getting-started.html"><a href="getting-started.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.1</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.2" data-path="getting-started.html"><a href="getting-started.html#the-rstudio-layout"><i class="fa fa-check"></i><b>1.2</b> The RStudio Layout</a></li>
+<li class="chapter" data-level="1.3" data-path="getting-started.html"><a href="getting-started.html#what-is-r"><i class="fa fa-check"></i><b>1.3</b> What is R?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html"><i class="fa fa-check"></i><b>2</b> Vectors and Lists</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-vectors"><i class="fa fa-check"></i><b>2.1</b> All About Vectors</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-vectors-lab-exercises"><i class="fa fa-check"></i><b>2.1.1</b> All About Vectors: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-lists"><i class="fa fa-check"></i><b>2.2</b> All About Lists</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#all-about-lists-lab-exercises"><i class="fa fa-check"></i><b>2.2.1</b> All About Lists: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#handy-vector-functions"><i class="fa fa-check"></i><b>2.3</b> Handy Vector Functions</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#handy-vector-functions-lab-exercises"><i class="fa fa-check"></i><b>2.3.1</b> Handy Vector Functions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#control-flow-constructs"><i class="fa fa-check"></i><b>2.4</b> Control-Flow Constructs</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#control-flow-constructs-lab-exercises"><i class="fa fa-check"></i><b>2.4.1</b> Control-Flow Constructs: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#loops"><i class="fa fa-check"></i><b>2.5</b> Loops</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="vectors-and-lists.html"><a href="vectors-and-lists.html#loops-lab-exercises"><i class="fa fa-check"></i><b>2.5.1</b> Loops: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="strings.html"><a href="strings.html"><i class="fa fa-check"></i><b>3</b> Strings</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="strings.html"><a href="strings.html#basic-string-functions"><i class="fa fa-check"></i><b>3.1</b> Basic String Functions</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="strings.html"><a href="strings.html#basic-string-functions-lab-exercises"><i class="fa fa-check"></i><b>3.1.1</b> Basic String Functions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="strings.html"><a href="strings.html#regular-expressions"><i class="fa fa-check"></i><b>3.2</b> Regular Expressions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="strings.html"><a href="strings.html#regular-expressions-lab-exercises"><i class="fa fa-check"></i><b>3.2.1</b> Regular Expressions: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="strings.html"><a href="strings.html#string-extraction-and-replacement"><i class="fa fa-check"></i><b>3.3</b> String Extraction and Replacement</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="strings.html"><a href="strings.html#string-extraction-and-replacement-lab-exercises"><i class="fa fa-check"></i><b>3.3.1</b> String Extraction and Replacement: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html"><i class="fa fa-check"></i><b>4</b> Data Frames and Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-io"><i class="fa fa-check"></i><b>4.1</b> Data I/O</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-io-lab-exercises"><i class="fa fa-check"></i><b>4.1.1</b> Data I/O: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#splitapplycombine"><i class="fa fa-check"></i><b>4.2</b> Split/Apply/Combine</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#splitapplycombine-lab-exercises"><i class="fa fa-check"></i><b>4.2.1</b> Split/Apply/Combine: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#pipes"><i class="fa fa-check"></i><b>4.3</b> Pipes</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#pipes-lab-exercises"><i class="fa fa-check"></i><b>4.3.1</b> Pipes: Lab Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-manipulation-with-dplyr"><i class="fa fa-check"></i><b>4.4</b> Data Manipulation with dplyr</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="data-frames-and-data-manipulation.html"><a href="data-frames-and-data-manipulation.html#data-manipulation-with-dplyr-lab-exercises"><i class="fa fa-check"></i><b>4.4.1</b> Data Manipulation with dplyr: Lab Exercises</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">An Introduction to R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="vectors-and-lists" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Vectors and Lists<a href="vectors-and-lists.html#vectors-and-lists" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="all-about-vectors" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> All About Vectors<a href="vectors-and-lists.html#all-about-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As a reminder: code output <em>is not shown</em>. It is assumed that you will type all the code into the <code>Console</code> in <code>RStudio</code>, both to actively engage with the material and to actually see the output.</p>
+<p><img src="figures/vectors.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>Atomic vectors are <em>homogeneous</em>, i.e., all elements of the vectors are of the same type.</p>
+<p>The types of atomic vectors (or just <em>vectors</em>) are:</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>double</code></td>
+<td align="left">double-precision floating-point numbers (8 bytes per element)</td>
+</tr>
+<tr class="even">
+<td align="left"><code>integer</code></td>
+<td align="left">integer numbers (4 bytes per element)</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>logical</code></td>
+<td align="left"><code>TRUE</code> and <code>FALSE</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>character</code></td>
+<td align="left">individual strings (at 1 byte per individual character within each string)</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>complex</code> and <code>raw</code></td>
+<td align="left">(not covered here)</td>
+</tr>
+</tbody>
+</table>
+<p>Note: the <code>integer</code> and <code>double</code> types are collectively (and at times confusingly) dubbed <code>numeric</code>. (Confusingly because one can cast to a <code>numeric</code> type, which is equivalent to casting to <code>double</code>.)</p>
+<p>Let’s show the various ways in which one can initialize a vector (in this case, of integers) of length five:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Command</th>
+<th align="left">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>x &lt;- c(0,0,0,0,0)</code></td>
+<td align="left">c = “collection” or “container”</td>
+</tr>
+<tr class="even">
+<td align="left"><code>x &lt;- rep(0,5)</code></td>
+<td align="left">rep = “repeat”</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>x &lt;- vector("integer",5)</code></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><code>x &lt;- integer(5)</code></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>x &lt;- seq(1,5,by=1)</code></td>
+<td align="left">seq = “sequence”</td>
+</tr>
+<tr class="even">
+<td align="left"><code>x &lt;- 1:5</code></td>
+<td align="left">steps by 1</td>
+</tr>
+</tbody>
+</table>
+<p>Note that one can use all six of these functions to initialize numeric vectors, and the first four to initialize those of mode <code>logical</code> or <code>character</code>, as with, e.g.,</p>
+<pre><code>vector(&quot;logical&quot;,5)
+character(5)</code></pre>
+<p>Note: there is no such thing as a “scalar” in <code>R</code>, i.e., <code>x &lt;- 1</code> defines a double-precision vector of length 1.</p>
+<hr />
+<p>To determine the type of a vector:</p>
+<pre><code>x &lt;- c(1,0,3,2)
+typeof(x)</code></pre>
+<p>To determine the number of elements in a vector:</p>
+<pre><code>length(x)</code></pre>
+<p>To display the <span class="math inline">\(n^{\rm th}\)</span> element of a vector (here, the first one…and
+note that <code>R</code> counts from 1, not 0):</p>
+<pre><code>x[1]</code></pre>
+<p>To explicitly cast from one type to another:</p>
+<pre><code>as.character(x)
+as.logical(x)</code></pre>
+<hr />
+<p>To sort a vector in ascending order, and to retrieve the sorted vector indices:</p>
+<pre><code>x
+sort(x)
+order(x)</code></pre>
+<p>To reverse the order of the elements in a vector:</p>
+<pre><code>rev(x)</code></pre>
+<hr />
+<p><img src="figures/relational.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>If you apply a relational operator to a vector, the output will be a logical vector:</p>
+<pre><code>set.seed(101)
+x &lt;- rnorm(10)
+x &gt; 0</code></pre>
+<p><strong>VERY IMPORTANT</strong>: if you apply a logical vector of length <span class="math inline">\(n\)</span> to a vector of length <span class="math inline">\(n\)</span>, then only the elements of the second vector associated with the value <code>TRUE</code> will be displayed! For instance:</p>
+<pre><code>x
+x[x&gt;0]</code></pre>
+<p>The output from relational operators can be combined using the logical <code>and</code> operator <code>&amp;</code> or the logical <code>or</code> operator <code>|</code>:</p>
+<pre><code>y &lt;- x&gt;0 &amp; x&lt;0.5
+x[y]
+y &lt;- x&lt;0 | x&gt;0.5
+x[y]</code></pre>
+<p>To invert a logical vector, use the <code>!</code> operator:</p>
+<pre><code>x[!y]</code></pre>
+<hr />
+<p>To determine how many values in your vector satisfy a condition, combine one or more relational operators with the <code>sum()</code> function:</p>
+<pre><code>sum(x&gt;-0.5&amp;x&lt;0)</code></pre>
+<p>To determine which elements of the original vector satisfy a condition, combine one or more relational operators with the <code>which()</code> function:</p>
+<pre><code>which(x&gt;-0.5&amp;x&lt;0)</code></pre>
+<p>Another means by which to subset a vector is to apply the output of the <code>which()</code> function. Note how adding a minus sign changes the output!</p>
+<pre><code>w &lt;- which(x&lt;0)
+x[w]
+x[-w]</code></pre>
+<hr />
+<p>As a final note:</p>
+<ul>
+<li><code>NA</code> means “Not Available” and is the preferred way in <code>R</code> to denote missing data</li>
+<li><code>NaN</code> means “Not a Number” and denotes, e.g, 0/0</li>
+<li><code>Inf</code> means “Infinite” and denotes, e.g., 1/0</li>
+</ul>
+<p>To determine whether vector elements are, e.g., <code>NA</code>, we can use the <code>is.na()</code>, <code>is.nan()</code>, and/or <code>is.infinite()</code> functions. Each returns a logical vector.</p>
+<pre><code>x &lt;- c(1,NA,3)
+is.na(x)
+x[!is.na(x)]</code></pre>
+<hr />
+<div id="all-about-vectors-lab-exercises" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> All About Vectors: Lab Exercises<a href="vectors-and-lists.html#all-about-vectors-lab-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Please download and work through the following <code>R Markdown</code> file:</p>
+<p><a href="https://www.stat.cmu.edu/~pfreeman/vectors.Rmd">vectors.Rmd</a></p>
+<p>The solutions are provided <a href="https://www.stat.cmu.edu/~pfreeman/vectors_sol.pdf">here</a>.</p>
+</div>
+</div>
+<div id="all-about-lists" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> All About Lists<a href="vectors-and-lists.html#all-about-lists" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="figures/vectors.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>As can be seen above, a list is not an atomic entity; it may be thought of as a (perhaps heterogeneous) collection of atomic vectors:</p>
+<pre><code>x &lt;- list(1:5,c(&quot;a&quot;,&quot;b&quot;))
+x</code></pre>
+<p>A list in <code>R</code> is like a dictionary in <code>Python</code>.</p>
+<hr />
+<p>For reasons that will become apparent soon, it is perhaps best to think of a list as a “table,” with each separate vector in the list being a “column” within that table. (Yes, the number of rows can vary from column to column, but work with me here.) To access a “column,” you use “double-bracket” notation:</p>
+<pre><code>x[[2]]</code></pre>
+<p>To access a particular “row” in a given column, you can tack on its number:</p>
+<pre><code>x[[1]][3]</code></pre>
+<hr />
+<p>Dealing with double brackets can be tiresome. We can assign names to each of the list elements as follows:</p>
+<pre><code>names(x) &lt;- c(&quot;a&quot;,&quot;b&quot;)
+x</code></pre>
+<p>We can also change the name of any one of the elements like so:</p>
+<pre><code>names(x)[1] &lt;- c(&quot;c&quot;)
+x</code></pre>
+<hr />
+<p>When you initialize a list, you can name each of the vectors and then use the names to access list elements. Note the use of the dollar sign in the third line below; it is a useful shorthand.</p>
+<pre><code>x &lt;- list(u=1:5,v=c(&quot;a&quot;,&quot;b&quot;))
+x[[&quot;u&quot;]][3]
+x$u[3]</code></pre>
+<hr />
+<p>A <em>data frame</em> is a list whose entries all have the same number of elements.</p>
+<pre><code>x &lt;- data.frame(u=1:2,v=c(&quot;a&quot;,&quot;b&quot;),w=c(TRUE,FALSE))
+x</code></pre>
+<p>Note that when we output a data frame, row numbers are added.</p>
+<p>Are we sure this is a list? Yes…if we check the variable type:</p>
+<pre><code>typeof(x)
+class(x)</code></pre>
+<hr />
+<p>A matrix may be thought of as a data frame whose columns are all vectors of the same type. However, operations applied to a matrix are fundamentally different from those applied to a list.</p>
+<pre><code>x &lt;- matrix(1:6,nrow=2)
+x      # the matrix filled column-by-column (column-major order)
+x[[1]] # doesn&#39;t work like you&#39;d think it should
+x[2,1] # works: row first, then column</code></pre>
+<hr />
+<div id="all-about-lists-lab-exercises" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> All About Lists: Lab Exercises<a href="vectors-and-lists.html#all-about-lists-lab-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Please download and work through the following <code>R Markdown</code> file:</p>
+<p><a href="https://www.stat.cmu.edu/~pfreeman/lists.Rmd">lists.Rmd</a></p>
+<p>The solutions are provided <a href="https://www.stat.cmu.edu/~pfreeman/lists_sol.pdf">here</a>.</p>
+</div>
+</div>
+<div id="handy-vector-functions" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Handy Vector Functions<a href="vectors-and-lists.html#handy-vector-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A vector, like a list, can have names and attributes:</p>
+<pre><code>x &lt;- c(a=1,b=2,c=3)
+attr(x,&quot;Creator&quot;) = &quot;Peter Freeman&quot;
+x</code></pre>
+<p>If you want to, e.g., strip the names and attributes off, even temporarily, you can use <code>as.vector()</code>:</p>
+<pre><code>as.vector(x)</code></pre>
+<p>If you have a list, and want to concatenate the contents of each list element into a single vector, do not use <code>as.vector()</code>, but rather use <code>unlist()</code>:</p>
+<pre><code>x &lt;- list(c(&quot;a&quot;,&quot;b&quot;),1:3)
+x
+unlist(x)  # note: casting occurs to make the vector elements a single type!</code></pre>
+<hr />
+<p>You’ve learned about <code>sort()</code>. Here we will show an example of why <code>order()</code> is also important. <code>order()</code> returns a numeric vector showing vector <em>elements</em> and not vector <em>values</em> (which is what <code>sort()</code> returns):</p>
+<pre><code>x &lt;- c(5,3,7,1) # the 4th element is the smallest, then the 2nd element, then the 1st, then the 3rd
+order(x)</code></pre>
+<p>Now, let’s say you have a pair of vectors of equal length (e.g., two columns in a data frame), and you wish to sort one vector but keep the association between the vectors intact:</p>
+<pre><code>x &lt;- c(9,5,7,6) # we have four pairs: 9 with 1, 5 with 2, 7 with 3, 6 with 4
+y &lt;- 1:4
+sort(x) # the association between vectors is broken
+sort(y)
+
+o &lt;- order(x)
+x[o]    # the association between vectors remains intact
+y[o]</code></pre>
+<p>In short: <code>sort()</code> is useful when sorting one vector, and <code>order()</code> is useful for sorting an associated group of vectors (read: a data frame) based on the entries in one of vectors (read: a column).</p>
+<hr />
+<p>Let’s say you have a vector that has many repeated values (e.g., the index of a datum’s leaf in a classification tree). To determine the set of unique values, use the <code>unique()</code> function:</p>
+<pre><code>set.seed(999)
+x &lt;- sample(c(3,6,12,44),100,replace=TRUE) # assume we don&#39;t actually know the input values
+unique(x)</code></pre>
+<p>As you can see, the values are sorted according to when they first appeared in the vector. So sometimes it is useful to redirect the output from unique() to the sort() function:</p>
+<pre><code>sort(unique(x))</code></pre>
+<hr />
+<p>If you not only want to see what the unique values are, but how many times each occurred, use a <code>table()</code>:</p>
+<pre><code>table(x) # this will actually sort the values for you, unlike unique</code></pre>
+<p>To follow up on a previous topic: the output of <code>table()</code> is of class <code>table</code>, which creates a structure that includes the data frequencies, uses the data values as names, and carries around attributes (e.g., <code>dim</code>, the number of data values). As a reminder, if you just want the frequencies…</p>
+<pre><code>as.vector(table(x))</code></pre>
+<hr />
+<p>Perhaps you wish to bin the values in a vector. You can do this with a combination of <code>table()</code> and the function <code>findInterval()</code>. For the latter, you pass in a vector of bin boundaries and a data vector and what comes out is a vector of bin numbers. For instance:</p>
+<pre><code>x &lt;- 1:10
+findInterval(x,c(3,7)) # [1,3) -&gt; bin 0, [3,7) -&gt; bin 1, [7,10] -&gt; bin 2</code></pre>
+<p>As stated, it can be useful to summarize this output in a table. For instance, if we sample 10,000 data from a standard normal, we expect about 68.27% of the values to lie between -1 and 1.</p>
+<pre><code>set.seed(666)
+x &lt;- rnorm(10000)
+table(findInterval(x,c(-1,1)))</code></pre>
+<p>Pretty good!</p>
+<hr />
+<p>Let’s define two vectors:</p>
+<pre><code>u &lt;- c(1:5,5,5)
+v &lt;- 3:7</code></pre>
+<p>First, we can apply set operations to these vectors. For instance, to merge the vectors:</p>
+<pre><code>union(u,v) # NOTE: this only shows the *unique* values in the union...the 5 is not replicated!</code></pre>
+<p>And if there is a union, there must be an intersect(ion):</p>
+<pre><code>intersect(u,v) # NOTE: as above, only the *unique* values are shown</code></pre>
+<p>What values are in the vector <code>u</code> that are not in the vector <code>v</code>?</p>
+<pre><code>setdiff(u,v) # asymmetric: setdiff(v,u) gives different answer!</code></pre>
+<p>Do the vectors contain the same values (regardless of the number of times values are replicated)?</p>
+<pre><code>setequal(u,v)
+setequal(u[-(1:2)],v[1:3])</code></pre>
+<hr />
+<p>There are two principal ways to determine if elements of one vector are contained in another.</p>
+<ul>
+<li><p><code>is.element(u,v)</code>: this returns a logical vector. The <span class="math inline">\(i^{\rm th}\)</span> element of this vector is <code>TRUE</code> if <code>u[i]</code> is an element of <code>v</code>, and <code>FALSE</code> otherwise.</p></li>
+<li><p><code>match(u,v)</code>: this returns a numeric vector. The <span class="math inline">\(i^{\rm th}\)</span> element of this vector is <code>NA</code> by default if <code>u[i]</code> is not an element of <code>v</code>. Otherwise, it is the index of the element of <code>v</code> that provides the first match to <code>u[i]</code>.</p></li>
+</ul>
+<pre><code>u
+v
+is.element(u,v) # the binary operator `%in%` is equivalent: `u %in% v`
+match(u,v)</code></pre>
+<hr />
+<div id="handy-vector-functions-lab-exercises" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Handy Vector Functions: Lab Exercises<a href="vectors-and-lists.html#handy-vector-functions-lab-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Please download and work through the following <code>R Markdown</code> file:</p>
+<p><a href="https://www.stat.cmu.edu/~pfreeman/vector_functions.Rmd">vector_functions.Rmd</a></p>
+<p>The solutions are provided <a href="https://www.stat.cmu.edu/~pfreeman/vector_functions_sol.pdf">here</a>.</p>
+</div>
+</div>
+<div id="control-flow-constructs" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Control-Flow Constructs<a href="vectors-and-lists.html#control-flow-constructs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The phrase “control-flow constructs” is one that <code>R</code>’s creators use to denote <code>if</code> and <code>while</code> and such. You can find a full list of control-flow constructs by typing <code>?Control</code> in the <code>RStudio</code> console. The constructs are among the reserved words in <code>R</code>’s command-line parser (meaning you cannot use them as variable names). You can find a list of reserved words by typing <code>?Reserved</code> in the console.</p>
+<pre><code>xx &lt;- 2
+if &lt;- 2</code></pre>
+<p>(Important note: if you want to knit an <code>R Markdown</code> file which has a buggy code chunk, add <code>error=TRUE</code> in the first line of the chunk.)</p>
+<hr />
+<p>Here are basic examples of the use of the <code>if-else</code> construct:</p>
+<pre><code>x &lt;- 2
+if ( x == 2 ) print(x)   # one line, no curly brackets
+if ( x == 2 ) {          # use curly brackets to enclose multiple commands over several lines
+  print(x)
+}</code></pre>
+<pre><code>if ( x == 2 ) {          # same idea, but now with an &quot;else&quot; thrown in
+  print(-x)
+} else {
+  print(x)
+}</code></pre>
+<p>(Note the <code>==</code>, which is a relational operator, and returns <code>TRUE</code> or <code>FALSE</code>. Use of a single <code>=</code> will lead to an exception being thrown.)</p>
+<hr />
+<p>An <code>if-else</code> construct will evaluate until the first time the quantity in parentheses evaluates to <code>TRUE</code>. Below, <code>x = 2</code> <em>and</em> <code>x &gt; 0</code>, but <code>foo</code> is not printed.</p>
+<pre><code>if ( x == 2 ) {
+  print(-x)
+} else if ( x &gt; 0 ) {
+  print(&quot;foo&quot;)
+} else {
+  print(&quot;bar&quot;)
+}</code></pre>
+<hr />
+<p>One can combine conditions within an <code>if</code> statement using <code>&amp;&amp;</code> (for “and”) or <code>||</code> (for “or”).</p>
+<p><strong>IMPORTANT:</strong> the difference between, e.g., <code>&amp;&amp;</code> and <code>&amp;</code> is that the latter returns a logical vector that can have a length greater than 1 and the former returns a logical vector of length 1.</p>
+<pre><code>u &lt;- c(TRUE,FALSE,TRUE)
+v &lt;- c(TRUE,TRUE,FALSE)
+u &amp; v
+u &amp;&amp; v</code></pre>
+<p><code>u &amp;&amp; v</code> only does a comparison between the first elements of <code>u</code> and <code>v</code> and ignores any subsequent elements.</p>
+<p>Long story short: if you use <code>&amp;&amp;</code> in an <code>if</code> statement, make sure what is on either side of the <code>&amp;&amp;</code> are vectors of length one. Otherwise you may not get the behavior you expect when you run your code.</p>
+<hr />
+<p>A compressed version of an <code>if-else</code> construct is provided by the <code>ifelse()</code> function:</p>
+<pre><code>ifelse(test,yes,no) # don&#39;t run this!</code></pre>
+<p>which means “if the object <code>test</code> returns <code>TRUE</code>, do whatever is specified by <code>yes</code>, otherwise do whatever is specified by <code>no</code>.” For example:</p>
+<pre><code>x &lt;- 2
+ifelse(x==2,TRUE,FALSE)</code></pre>
+<hr />
+<div id="control-flow-constructs-lab-exercises" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Control-Flow Constructs: Lab Exercises<a href="vectors-and-lists.html#control-flow-constructs-lab-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Please download and work through the following <code>R Markdown</code> file:</p>
+<p><a href="https://www.stat.cmu.edu/~pfreeman/control_flow.Rmd">control_flow.Rmd</a></p>
+<p>The solutions are provided <a href="https://www.stat.cmu.edu/~pfreeman/control_flow_sol.pdf">here</a>.</p>
+</div>
+</div>
+<div id="loops" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Loops<a href="vectors-and-lists.html#loops" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <code>for()</code> loop repeatedly runs a block of code while (usually) incrementing the value of a counter variable. Its typical structure is</p>
+<pre><code>for ( &lt;var name&gt; in &lt;min counter value&gt;:&lt;max counter value&gt; ) {
+  &lt;do stuff&gt;
+}</code></pre>
+<p>Here we compute <span class="math inline">\(x^2\)</span> for <span class="math inline">\(x \in [1,10]\)</span>:</p>
+<pre><code>x.sq &lt;- rep(NA,10)
+for ( ii in 1:10 ) {  # Why ii and not i? Easier to search for when debugging large code bases.
+  x.sq[ii] &lt;- ii^2
+}
+x.sq</code></pre>
+<p><strong>NOTE:</strong> one should utilize <em>vectorization</em> when one can. For instance, if <span class="math inline">\(x\)</span> is an <span class="math inline">\(n\)</span>-element vector, and <span class="math inline">\(y\)</span> is an <span class="math inline">\(n\)</span>-element vector, then, e.g., <span class="math inline">\(x+y\)</span> is an <span class="math inline">\(n\)</span>-element vector that contains the sums of the first elements and of the second elements, etc. In other words, one does not have to loop over vector indices to apply operations to each element. The above example is thus purely academic; one would really want to code this as <code>x.sq = (1:10)^2</code>. A decently good rule to follow is, when in doubt, code a <code>for()</code> loop first, get your full code base working, then see where you might be able to apply vectorization (while always checking that your output is unchanged as you update code).</p>
+<hr />
+<p>In the example above, the counter vector is <code>1:10</code>. You can specify this in other ways:</p>
+<pre><code>for ( ii in seq(1,10,by=1) ) {  # More general than 1:10; allows steps of size &gt; 1.
+  x.sq[ii] &lt;- ii^2
+}
+x.sq</code></pre>
+<p>Or you can specify that you are to step along each of the indices of <span class="math inline">\(x\)</span> in order:</p>
+<pre><code>for ( ii in seq_along(x.sq) ) {  # No need to specify bounds; good if you change the length of x.sq
+  x.sq[ii] &lt;- ii^2
+}
+x.sq</code></pre>
+<p>The counter vector need not be numeric.</p>
+<pre><code>str.vec = c(&quot;Pirates&quot;,&quot;Steelers&quot;,&quot;Penguins&quot;)
+for ( str in str.vec ) {
+  not &lt;- &quot;&quot;
+  if ( str == &quot;Pirates&quot;) not &lt;- &quot;not&quot;
+  cat(&quot;The&quot;,str,&quot;will&quot;,not,&quot;win the championship this year.\n&quot;)
+}</code></pre>
+<hr />
+<p>A <code>while()</code> loop repeatedly runs a block of code until some condition is no longer true. The usual structure here is</p>
+<pre><code>while ( &lt;condition&gt; == TRUE ) {
+  &lt;do stuff and possibly change condition to FALSE&gt;
+}</code></pre>
+<p>For example:</p>
+<pre><code>continue &lt;- TRUE
+x &lt;- 1
+while ( continue == TRUE ) {  # the &quot;== TRUE&quot; is actually not necessary here
+  if ( x &lt;= 5 ) {
+    cat(x,&quot; &quot;)
+  } else {
+    continue &lt;- FALSE
+  }
+  x &lt;- x+1
+}</code></pre>
+<hr />
+<p>When should you use <code>for()</code> and when should you use <code>while()</code>?</p>
+<ul>
+<li><code>for()</code> is good when you know what indices you will iterate over in advance</li>
+<li><code>while()</code> is good when you know the condition that needs to be fulfilled for the looping to stop, but you don’t know when it will be fulfilled (so, e.g., the example on the last slide is not necessarily the best example to display for <code>while()</code>, since we knew we were going to increment from <span class="math inline">\(x = 1\)</span> to <span class="math inline">\(x = 5\)</span> in advance)</li>
+</ul>
+<p><strong>NOTE:</strong> every <code>for()</code> loop can be replaced with a <code>while()</code> loop, but not vice-versa.</p>
+<hr />
+<ul>
+<li>If at some point in a loop you want to skip the remaining commands and return to the loop’s beginning, use <code>next</code>.</li>
+<li>If at some point in a loop you want to skip the remaining commands and exit the loop entirely, use <code>break</code>.</li>
+</ul>
+<pre><code>for ( ii in 1:10 ) {
+  if ( ii &gt;= 6 ) break
+  if ( ii &gt;= 6 ) print(&quot;oops!&quot;)
+  if ( ii &gt;= 3 ) next
+  print(ii)
+}
+ii</code></pre>
+<p>The loop skipped the final <code>print()</code> statement when <code>ii</code> <span class="math inline">\(\geq 3\)</span>, hence we only see the numbers 1 and 2 output initially, and then we exited the loop when <code>ii</code> = 6 (we know this because “oops!” was never printed).</p>
+<hr />
+<p>One can, in principle, create an infinite loop that will continue until a break is issued:</p>
+<pre><code>while ( TRUE ) { # Because TRUE == TRUE, always
+  input &lt;- readline(&quot;Name the best prof at CMU!&quot;)
+  if ( input == &quot;Freeman&quot; ) break
+  print(&quot;Try again.&quot;)
+}</code></pre>
+<p>NOTE: a <code>repeat</code> block will behave the same way. See <code>?Control</code> for more details.</p>
+<hr />
+<div id="loops-lab-exercises" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Loops: Lab Exercises<a href="vectors-and-lists.html#loops-lab-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Please download and work through the following <code>R Markdown</code> file:</p>
+<p><a href="https://www.stat.cmu.edu/~pfreeman/loops.Rmd">loops.Rmd</a></p>
+<p>The solutions are provided <a href="https://www.stat.cmu.edu/~pfreeman/loops_sol.pdf">here</a>.</p>
+
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="strings.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
